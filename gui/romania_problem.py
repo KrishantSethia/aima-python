@@ -1,10 +1,14 @@
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from copy import deepcopy
 from tkinter import *
+from tkinter.constants import RIGHT, GROOVE, W, E, SE
+from collections import deque
 
-from search import *
+from search import GraphProblem, Node, romania_map, memoize
 from utils import PriorityQueue
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 root = None
 city_coord = {}
@@ -622,7 +626,7 @@ def reset_map():
 
 # TODO: Add more search algorithms in the OptionMenu
 if __name__ == "__main__":
-    global algo, start, goal, next_button
+    #global algo, start, goal, next_button
     root = Tk()
     root.title("Road Map of Romania")
     root.geometry("950x1150")
